@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# Neovim Quick Edit
+alias brc="nvim ~/.bashrc"
+alias bals="nvim ~/.bash_aliases"
+
+# Reload bash config
+alias sbrc="source ~/.bashrc"
+alias sbals="source ~/.bash_aliases"
+
+# Tree
+alias tl2="tree -L 2"
+
+# Quick navigation
+alias b="cd .."
+alias bb="cd ../.."
+alias bbb="cd ../../.."
+alias cdnotes="cd ~/Notes/"
+alias cdnvim="cd ~/.config/nvim"
+
+# Ensure tmux-scrolling in Codex
+alias codex="codex --no-alt-screen"
+
+# Short commands
+alias nv="nvim"
+alias tm="tmux"
+alias lsa="ls -a"
+alias bat="batcat"
+alias vpdir="cd ~/.local/share/nvim/site/pack/core/opt/"
+alias nvdir="cd ~/.config/nvim/"
+mkcd() {
+    mkdir -p -- "$1" && cd -- "$1" || return
+}
+
+# Tmux
+alias tmns="tmux new -s"
+alias tmls="tmux ls"
+alias tmkt="tmux kill-session -t"
+alias tmat="tmux a -t"
+
+# SSH keys
+# Use like this: `keygen dev-server`
+keygen() {
+    ssh-keygen -t ed25519 -f "$HOME/.ssh/keys/$1"
+}
+
+# Git
+alias gs="git status"
+alias glog="git log --oneline | head -n 10"
+alias gdflast="git diff HEAD HEAD^1"
+gdf() {
+    git diff origin -- "$1"
+}
+gc() {
+    git clone "https://github.com/$1"
+}
+gcme() {
+    git clone "https://github.com/CrunchyToothpicks100/$1"
+}

@@ -1,0 +1,24 @@
+# --- EXAMPLE CONFIG FILE ---
+# Global defaults (Applies to all connections unless overridden)
+Host *
+	AddKeysToAgent yes
+	IdentitiesOnly yes
+
+# Minecraft Server Profile
+Host mc-server
+	HostName 192.168.0.10
+	User bob
+	IdentityFile ~/.ssh/keys/mc-server
+
+# Ubuntu Thinkpad Laptop Profile
+Host thinkpad
+	HostName 192.168.1.11
+	User ubuntu
+	IdentityFile ~/.ssh/keys/thinkpad
+
+# WSL Laptop Profile
+Host my-wsl
+	HostName 192.168.2.12
+	Port 2222
+	User alice
+	IdentityFile ~/.ssh/keys/my-wsl
