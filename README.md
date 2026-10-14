@@ -3,7 +3,8 @@
 This is an easy way to setup my own dev kit on other machines. The shell files
 and this README was 99% written with Codex. The README in `ssh-setup/` is
 my own tutorial on setting up SSH profiles and keys. There are no scripts
-related to the SSH setup, since I would prefer to do that manually.
+related to the SSH setup (other than keychain), since I would prefer to
+do it manually.
 
 NOTE: These scripts are not extensively tested, but they will ask you whether
 to backup, overwrite, or skip existing configuration files. I would RECOMMEND
