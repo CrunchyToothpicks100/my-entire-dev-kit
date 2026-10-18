@@ -92,11 +92,18 @@ should know exactly what profiles and keys to use.
 
 You can use SSH to sign your commits, this will add the "Verified" sticker.
 Go to `https://github.com/settings/keys`. Select "Signing key". Paste your
-public key. Add it.
+public key. Add it. In your bash terminal, enter this.
 
-In your bash terminal, enter `git config --global user.signingkey /path/to/private_key`
+`git config --global user.signingkey /path/to/public_key`
 
-Your commits should now be signed.
+Now we need to ensure Git knows to use SSH formatting.
+
+`git config --global gpg.format ssh`
+
+Optional: Enable auto-signing for all commits. (Otherwise you will have
+to pass the -S flag every time)
+
+`git config --global commit.gpgsign true`
 
 ## Server (WSL/Ubuntu)
 
