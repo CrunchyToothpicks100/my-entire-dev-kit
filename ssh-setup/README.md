@@ -105,6 +105,20 @@ to pass the -S flag every time)
 
 `git config --global commit.gpgsign true`
 
+Now we need to add the allowed_signers file (assuming your user.email is already set).
+
+`echo "$(git config user.email) $(cat /path/to/public_key)" >> ~/.ssh/allowed_signers`
+
+And point Git to the file.
+
+`git config --global gpg.ssh.allowedSignersFile ~/.ssh/allowed_signers`
+
+To test if it works, make a test commit, and then run this:
+
+`git log --show-signature -n 1`
+
+You should see an output containing `Good "ssh" signature`.
+
 ## Server (WSL/Ubuntu)
 
 Install OpenSSH server
