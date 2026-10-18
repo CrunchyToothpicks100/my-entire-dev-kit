@@ -88,6 +88,16 @@ Setup your config file (see example config). This file should be named `config`
 and sit directly in your ~/.ssh directory. With the right config, keychain
 should know exactly what profiles and keys to use.
 
+### Git SSH signing
+
+You can use SSH to sign your commits, this will add the "Verified" sticker.
+Go to `https://github.com/settings/keys`. Select "Signing key". Paste your
+public key. Add it.
+
+In your bash terminal, enter `git config --global user.signingkey /path/to/private_key`
+
+Your commits should now be signed.
+
 ## Server (WSL/Ubuntu)
 
 Install OpenSSH server
